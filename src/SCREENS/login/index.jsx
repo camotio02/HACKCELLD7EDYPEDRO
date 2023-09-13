@@ -4,9 +4,8 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import './styles/index.css';
-import Roboot from '../../IMAGES/robot-7770312_1280.webp'
+import Roboot from './styles/robot-7770312_1280.webp'
 import { sections } from './compontes/sections'
-import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import { MyTextField } from '../../COMPONENTS/textField/textField.jsx'
 import { Google } from '@mui/icons-material';
@@ -26,11 +25,12 @@ const LoginForm = () => {
   const handleLoginWithEmailAndPassword = () =>
     loginWithEmailAndPassword(data?.email, data?.password)
 
-
+  console.log(Roboot)
   return (
-    <div
-      style={{
-        background: Roboot,
+    <Stack
+      className='elemento-com-animacao'
+      sx={{
+        backgroundImage: 'url("https://cdn.pixabay.com/photo/2023/02/05/19/05/robot-7770312_1280.jpg")',
         position: 'fixed',
         top: '0',
         left: '0',
@@ -43,6 +43,7 @@ const LoginForm = () => {
       <Container
         maxWidth="xs"
         sx={{
+          backgroundColor: 'rgba(0, 0, 0, 0.6)',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -58,7 +59,9 @@ const LoginForm = () => {
               padding: '20px',
             }}
           >
-            <h2>Login</h2>
+            <h1>
+              <samp style={{ color: "orange" }}>hack</samp><samp>Celld7</samp>
+            </h1>
             {sections?.map((section, index) => {
               return (
                 <MyTextField
@@ -108,7 +111,7 @@ const LoginForm = () => {
           </Stack>
         </Fragment>
       </Container>
-    </div>
+    </Stack>
   );
 };
 
