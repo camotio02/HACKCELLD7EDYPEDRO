@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Fragment } from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
@@ -9,7 +9,20 @@ import { sections } from './compontes/sections'
 import { AuthContext } from '../../contexts/AuthContext';
 import { MyTextField } from '../../COMPONENTS/textField/textField.jsx'
 import { Google } from '@mui/icons-material';
+import { app_users } from '../../API';
 const LoginForm = () => {
+  const [users, setUsers] = useState([])
+  const getUsers = async () => {
+    try {
+      const response = await app_users.user.get()
+      setUsers(response)
+    } catch (e) {
+      console.error(e)
+    }
+  }
+  useEffect(() => {
+    getUsers()
+  }, [])
   const { loginWithGoogle, loginWithEmailAndPassword } =
     useContext(AuthContext)
   const [data, setData] = useState({
@@ -25,7 +38,6 @@ const LoginForm = () => {
   const handleLoginWithEmailAndPassword = () =>
     loginWithEmailAndPassword(data?.email, data?.password)
 
-  console.log(Roboot)
   return (
     <Stack
       className='elemento-com-animacao'

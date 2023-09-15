@@ -1,9 +1,9 @@
 
 import React, {useContext } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { CssBaseline } from '@mui/material'
 import LoginForm from './SCREENS/login'
 import { AuthContext, AuthProvider } from './contexts/AuthContext'
+import { Dashboard } from './PAGES/DASHBOARD'
 
 const Main = () => {
   const auth = useContext(AuthContext)
@@ -13,6 +13,7 @@ const Main = () => {
         <>
           <Routes>
           <Route path='/' element={<homePage />} />
+          <Route path='/topReview' element={<Dashboard />} />
           </Routes>
         </>
       ) : (
