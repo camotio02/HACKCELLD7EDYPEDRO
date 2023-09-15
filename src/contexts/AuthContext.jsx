@@ -76,8 +76,6 @@ export const AuthProvider = ({ children }) => {
                     await setDoc(doc(usersRef, user.uid), newUser);
                     setUser(newUser);
                 }
-
-                console.log('Dados do usuário adicionados/atualizados com sucesso no Firestore.');
                 login(user);
                 navigate('/topReview'); //redirecionar
             })
