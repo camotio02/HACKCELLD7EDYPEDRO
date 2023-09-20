@@ -12,8 +12,7 @@ const Main = () => {
       {auth.isLoggedIn ? (
         <>
           <Routes>
-          <Route path='/' element={<homePage />} />
-          <Route path='/topReview' element={<Dashboard />} />
+          <Route path='/' element={<Dashboard />} />
           </Routes>
         </>
       ) : (
