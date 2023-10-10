@@ -1,13 +1,14 @@
 
 import { styled, Stack, Box, Typography, Tooltip, Container } from '@mui/material'
+import { Root } from '../../../components/Global/root/root_styles'
 export const ContainerApp = styled(Container)(({ theme }) => ({
     display: "flex",
     flexDirection: 'column',
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     width: "100vw",
     height: "100vh",
-    backgroundColor:"rgb(84, 84, 84)",
-    color: 'white !important',
-    fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+    backgroundColor: Root.light,
+    color: Root.gray,
+    fontFamily: Root.fontFamilyMonospace
 }))

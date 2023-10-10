@@ -7,9 +7,9 @@ import './styles/index.css';
 import Roboot from './styles/robot-7770312_1280.webp'
 import { sections } from './compontes/sections'
 import { AuthContext } from '../../contexts/AuthContext';
-import { MyTextField } from '../../COMPONENTS/textField/textField.jsx'
+import { MyTextField } from '../../components/TextField/textField.jsx'
 import { Google } from '@mui/icons-material';
-import { app_users } from '../../API';
+import { app_users } from '../../api';
 const LoginForm = () => {
   const [users, setUsers] = useState([])
   const getUsers = async () => {

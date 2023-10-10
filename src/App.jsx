@@ -1,9 +1,9 @@
 
 import React, {useContext } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import LoginForm from './SCREENS/login'
+import LoginForm from './screens/Login'
 import { AuthContext, AuthProvider } from './contexts/AuthContext'
-import { Dashboard } from './PAGES/DASHBOARD'
+import { Dashboard } from './pages/Dashboard'
 
 const Main = () => {
   const auth = useContext(AuthContext)
